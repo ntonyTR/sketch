@@ -22,3 +22,9 @@ body {
     display: flex;
     justify-content: space-around;
 }
+
+.grid {
+    border: 1px solid blue;
+    background-color: yellow;
+    transition: .1s;
+}
