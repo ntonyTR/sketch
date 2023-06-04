@@ -1,0 +1,24 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
+}
+
+#board {
+    border: 2px solid black;
+    margin: 20px auto;
+    height: 500px;
+    width: 500px;
+    display: grid;
+}
+
+#buttons_container{
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+}
