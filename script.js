@@ -2,20 +2,16 @@ const board = document.getElementById("board");
 const colorInput = document.getElementById("color_picker")
 let color = "black";
 const customSize = document.getElementById("input_size");
-let size = ""
 const eraserBtn = document.getElementById("eraser_button");
 const clearBtn = document.getElementById("clear_button");
 const rainbowBtn = document.getElementById("rainbow_button")
+const gridSizes = [4, 8, 16, 32, 64]
 
 rainbowBtn.addEventListener("click", () => {color = "rainbow"});
+eraserBtn.addEventListener("click", () => {color = "white"})
+colorInput.addEventListener("input", () => {color = colorInput.value})
+customSize.addEventListener("input", () => {setCustomGrid(customSize.value)})
 clearBtn.addEventListener("click", () => {resetBoard()});
-eraserBtn.addEventListener("click", () => {setColor("white")})
-customSize.addEventListener("input", () => {
-    setCustomGrid(customSize.value)
-})
-colorInput.addEventListener("input", () => {setColor(colorInput.value)})
-
-const gridSizes = [4, 8, 16, 32, 64]
 gridSizes.forEach(size => {
     const button = document.getElementById(`button_${size}`);
     button.addEventListener("click", () => makeGrid(size));
@@ -23,10 +19,8 @@ gridSizes.forEach(size => {
 
 function setCustomGrid(input){
     const warning = document.getElementById("warning_message")
-    size = input;
-    if (isNaN(size) || size < 2 || size > 100) {
+    if (isNaN(input) || input < 2 ||input > 100) {
         warning.classList.remove("hidden")
-        warning.classList.add("visible")
         return
     }
     warning.classList.add("hidden")
@@ -42,23 +36,27 @@ function makeGrid(pixels) {
 
     for (let i = 0; i < totalDivs; i++) {
         let div = document.createElement("div");
-        div.addEventListener("mouseover", () => draw(div))
+        div.addEventListener("mouseover", () => draw(div, color))
         board.appendChild(div);
         div.classList.add("grid")
     }
 }
 
-function draw(div){
+function draw(div, color){
     if (color == "rainbow") {
         div.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
+        div.style.border = "none"
+        return
+    }
+    else if (color == "white") {
+        div.style.backgroundColor = "white"
+        div.style.border = "1px solid rgba(200, 200, 200, 0.25)"
+        return
     }
     div.style.backgroundColor = color
     div.style.border = "none"
 }
 
-function setColor(colorSelection){
-    color = colorSelection;
-}
 
 function resetBoard() {
     divs = board.querySelectorAll("div")

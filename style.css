@@ -55,7 +55,7 @@ body {
     display:none;
 }
 
-.visible {
+#warning_message {
     transform: scale(1.5);
     color: red;
 }
