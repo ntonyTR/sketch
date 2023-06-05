@@ -1,23 +1,31 @@
-const board = document.getElementById("board");
-const colorInput = document.getElementById("color_picker")
 let color = "black";
-const customSize = document.getElementById("input_size");
-const eraserBtn = document.getElementById("eraser_button");
-const clearBtn = document.getElementById("clear_button");
-const rainbowBtn = document.getElementById("rainbow_button")
-const gridSizes = [4, 8, 16, 32, 64]
+const board = document.getElementById("board");
 
-rainbowBtn.addEventListener("click", () => {color = "rainbow"});
-eraserBtn.addEventListener("click", () => {color = "white"})
-colorInput.addEventListener("input", () => {color = colorInput.value})
-customSize.addEventListener("input", () => {setCustomGrid(customSize.value)})
-clearBtn.addEventListener("click", () => {resetBoard()});
-gridSizes.forEach(size => {
-    const button = document.getElementById(`button_${size}`);
-    button.addEventListener("click", () => makeGrid(size));
-});
+function init(){
+    const colorInput = document.getElementById("input_color")
+    const sizeInput = document.getElementById("input_size");
+    const eraserBtn = document.getElementById("eraser_button");
+    const clearBtn = document.getElementById("clear_button");
+    const rainbowBtn = document.getElementById("rainbow_button")
 
-function setCustomGrid(input){
+    colorInput.addEventListener("input", () => {color = colorInput.value})
+    sizeInput.addEventListener("input", () => {validateSizeInput(sizeInput.value)})
+    eraserBtn.addEventListener("click", () => {color = "white"})
+    clearBtn.addEventListener("click", () => {resetBoard()});
+    rainbowBtn.addEventListener("click", () => {color = "rainbow"});
+    
+    initGridBtns();
+}
+
+function initGridBtns() {
+    const gridSizes = [4, 8, 16, 32, 64]
+    gridSizes.forEach(size => {
+        const button = document.getElementById(`button_${size}`);
+        button.addEventListener("click", () => makeGrid(size));
+    });
+}
+
+function validateSizeInput(input){
     const warning = document.getElementById("warning_message")
     if (isNaN(input) || input < 2 ||input > 100) {
         warning.classList.remove("hidden")
@@ -59,8 +67,10 @@ function draw(div, color){
 
 
 function resetBoard() {
-    divs = board.querySelectorAll("div")
+    let divs = board.querySelectorAll("div")
     divs.forEach(div => {
         div.remove();
     });
 }
+
+init();
