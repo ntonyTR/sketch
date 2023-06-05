@@ -1,3 +1,4 @@
+const board = document.getElementById("board");
 const playBtn = document.getElementById("play_button");
 const colorInput = document.getElementById("color_picker")
 let color = "black";
@@ -6,7 +7,7 @@ const btn8 = document.getElementById("button_8");
 const btn16 = document.getElementById("button_16");
 const btn32 = document.getElementById("button_32");
 const btn64 = document.getElementById("button_64");
-const customSize = document.getElementById("custom_size")
+const customSize = document.getElementById("input_size")
 let size = ""
 customSize.addEventListener("input", () => {
     setCustomGrid(customSize.value)
@@ -15,11 +16,12 @@ customSize.addEventListener("input", () => {
 function setCustomGrid(input){
     const warning = document.getElementById("warning_message")
     size = input;
-    if (isNaN(size)) {
-        warning.style.color = "red"
+    if (isNaN(size) || size < 2 || size > 100) {
+        warning.classList.remove("hidden")
+        warning.classList.add("visible")
         return
     }
-    warning.style.color = "black"
+    warning.classList.add("hidden")
     makeGrid(input)
 }
 
@@ -33,7 +35,7 @@ btn64.addEventListener("click", () => makeGrid(64));
 colorInput.addEventListener("input", () => {setColor(colorInput.value)})
 
 function makeGrid(pixels) {
-    const board = document.getElementById("board");
+    resetBoard();
     board.style.gridTemplateColumns = `repeat(${pixels}, 1fr)`
     board.style.gridTemplateRows = `repeat (${pixels}, 1fr)`
 
@@ -52,4 +54,11 @@ function draw(div){
 
 function setColor(colorSelection){
     color = colorSelection;
+}
+
+function resetBoard() {
+    divs = board.querySelectorAll("div")
+    divs.forEach(div => {
+        div.remove();
+    });
 }

@@ -12,7 +12,8 @@ body {
 
 #board {
     border: 2px solid black;
-    margin: 20px auto;
+    margin-top: 5px;
+    margin-bottom: 20px;
     height: 500px;
     width: 500px;
     display: grid;
@@ -20,6 +21,7 @@ body {
 
 #buttons_container{
     width: 500px;
+    height: 30px;
     display: flex;
     justify-content: space-around;
 }
@@ -32,15 +34,37 @@ body {
 
 #grid_buttons {
     width: 500px;
-    height: 20px;
+    height: 30px;
     display: flex;
-    border: 2px solid red;
     justify-content: space-between;
     align-items: center;
+}
+
+#grid_buttons button{
+    width: 5ch;
 }
 
 #grid_buttons div{
     display: flex;
     align-items: center;
-    height: 20px;
+    gap: 5px;
+    height: 30px;
+}
+
+.hidden {
+    display:none;
+}
+
+.visible {
+    transform: scale(1.5);
+    color: red;
+}
+
+#input_size {
+    width: 3ch;
+}
+
+button:hover,
+#color_picker {
+    cursor: pointer;
 }
