@@ -23,8 +23,8 @@ body {
     justify-content: space-around;
 }
 
-/* .pixel {
-    border: 1px solid blue;
-    background-color: yellow;
-    transition: .1s;
-} */
+#buttons_container div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
