@@ -68,3 +68,21 @@ button:hover,
 #color_picker {
     cursor: pointer;
 }
+
+#color_picker{
+    width: 40px;
+    border: none;
+    background-color:rgba(240, 248, 255, 0);
+}
+
+.grid {
+    border: 1px solid rgba(200, 200, 200, 0.25);
+}
+
+#rainbow_button {
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 100% auto;
+    background-repeat: repeat-x;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+}
