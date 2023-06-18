@@ -10,9 +10,9 @@
 </head>
 
 <body>
-
     <div id="header">
-        <h1>Sketch</h1>
+        <h1>PIXEL SKETCH</h1>
+        <p id="size_message">Choose the grid size or enter a value</p>
     </div>
 
     <div id="main_content">
@@ -22,24 +22,28 @@
             <button id="button_16">16</button>
             <button id="button_32">32</button>
             <button id="button_64">64</button>
-            <div>
-                <p>Custom (2 - 100)</p>
+            <div id="grid_input">
+                <p>Custom (2 - 100):</p>
                 <input type="text" id="input_size">
             </div>
         </div>
-        <p id="warning_message" class="hidden">Please input a number between 2 and 100</p>
+        <p id="warning_message" class="hidden">Please enter a number between 2 and 100</p>
         <div id="board"></div>
     </div>
 
-    <div id="buttons_container">
-        <button id="clear_button">Clear</button>
-        <button id="eraser_button">Eraser</button>
+    <div id="control_buttons">
+        <button id="clear_button">CLEAR</button>
+        <button id="eraser_button">ERASER</button>
         <div>
             <p>Color</p>
             <input type="color" id="input_color">
+            <button id="rainbow_button">RAINBOW</button>
         </div>
-            <button id="rainbow_button">Rainbow</button>
     </div>
 
+    <footer>
+        <p>Made by:</p>
+        <a href="https://github.com/ntonyTR">Antony TR</a>
+    </footer>
 </body>
 </html>

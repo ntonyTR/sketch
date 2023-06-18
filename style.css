@@ -1,88 +1,127 @@
+@import url('https://fonts.cdnfonts.com/css/chango');
+@import url('https://fonts.googleapis.com/css2?family=Catamaran&display=swap');
+
 body {
+    background-color: #325844;
+    color: #e3e3e3;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-#header {
-    margin-top: -20px;
-    padding: 0;
+#header > *{
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
-#board {
-    border: 2px solid black;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    height: 500px;
-    width: 500px;
-    display: grid;
-}
-
-#buttons_container{
-    width: 500px;
-    height: 30px;
-    display: flex;
-    justify-content: space-around;
-}
-
-#buttons_container div {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+h1 {
+    font-family: 'chango', sans-serif;  
+    font-size: 50px;
+    letter-spacing: 1rem;
 }
 
 #grid_buttons {
-    width: 500px;
-    height: 30px;
+    width: 650px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    margin: 10px auto;
 }
 
-#grid_buttons button{
-    width: 5ch;
-}
-
-#grid_buttons div{
+#grid_input {
     display: flex;
     align-items: center;
     gap: 5px;
     height: 30px;
 }
 
+#grid_input input {
+    width: 5ch;
+    text-align: center;
+    font-size: 20px;
+}
+
+#warning_message {
+    background-color: red;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    margin: 10px 20px;
+    border-radius: 20px;
+}
+
 .hidden {
     display:none;
 }
 
-#warning_message {
-    transform: scale(1.5);
-    color: red;
-}
-
-#input_size {
-    width: 3ch;
-}
-
-button:hover,
-#color_picker {
-    cursor: pointer;
-}
-
-#color_picker{
-    width: 40px;
-    border: none;
-    background-color:rgba(240, 248, 255, 0);
+#board {
+    background-color: rgb(255, 255, 255);
+    border: 10px solid #222831;
+    border-radius: 8px;
+    height: 650px;
+    width: 650px;
+    display: grid;
 }
 
 .grid {
-    border: 1px solid rgba(200, 200, 200, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #FFD369;
+    border: 3px solid #222831;
+    width: 4ch;
+    border-radius: 8px;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+button:hover,
+#input_color {
+    cursor: pointer;
+}
+
+#control_buttons {
+    width: 650px;
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 4px auto 0 auto;
+}
+
+#control_buttons button {
+    width: 10ch;
+}
+
+#control_buttons div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#input_color {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color:rgba(255, 255, 255, 0);
 }
 
 #rainbow_button {
-    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-    background-size: 100% auto;
-    background-repeat: repeat-x;
-    color: rgb(255, 255, 255);
-    font-weight: bolder;
+    background-image: linear-gradient(to right, red, yellow, green, blue);
+    font-weight: 900;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+}
+
+a {
+    color: #FFD369;
 }

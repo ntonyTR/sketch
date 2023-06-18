@@ -72,5 +72,5 @@ function resetBoard() {
         div.remove();
     });
 }
-
+ 
 init();
