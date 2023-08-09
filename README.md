@@ -1,4 +1,6 @@
-Pagina web que permite dibujar estilo pixel art en un lienzo cuadrado, se puede seleccionar la cantidad de pixeles en el lienzo, asi como los colores a utilizar.
+Aplicación web para dibujar en una cuadrícula utilizando HTML, CSS y JavaScript. Permite elegir el tamaño de la cuadrícula, seleccionar un color, usar un borrador y
+activar la función "arcoíris" para colores aleatorios
+
 [Ejemplo en vivo](https://ntonytr.github.io/sketch/)<br>
 Mi [Linkedin](https://www.linkedin.com/in/antonytr/)<br>
 Mi correo: [antonyetr@outlook.com](mailto:antonyetr@outlook.com)
